@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LeaseDetails">
+
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Date"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/imgButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/holo_green_light"
+        android:onClick="backPage"
+        android:text="BACK"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/homeButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonUpdate"
+        app:layout_constraintVertical_bias="0.375" />
+
+    <Button
+        android:id="@+id/homeButton"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimary"
+        android:onClick="mainPage"
+        android:text="HOME"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imgButton"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDelete"
+        app:layout_constraintVertical_bias="0.375" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputCredit"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/credit_amount"
+            android:inputType="number" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/setCreditPer"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/setAccessPer"
+        app:layout_constraintStart_toStartOf="@+id/setAccessPer"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:editable="false"
+            android:hint="credit percent" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputAccess"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/inputCredit"
+        app:layout_constraintStart_toStartOf="@+id/inputCredit"
+        app:layout_constraintTop_toTopOf="@+id/setAccessPer">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/total_access_miles" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/setAccessPer"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/inputAccess"
+        app:layout_constraintTop_toBottomOf="@+id/setCreditPer">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:editable="false"
+            android:hint="(1*2.6) percent" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputAccount"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/inputAccess"
+        app:layout_constraintStart_toStartOf="@+id/inputAccess"
+        app:layout_constraintTop_toBottomOf="@+id/inputAccess">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="account amount" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/setAccountPer"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/setAccessPer"
+        app:layout_constraintStart_toStartOf="@+id/setAccessPer"
+        app:layout_constraintTop_toTopOf="@+id/inputAccount">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:editable="false"
+            android:hint="account percent" />
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvIncome"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttonUpdate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputLease" />
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="Update"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDelete"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonDelete" />
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorAccent"
+        android:text="Delete"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonUpdate"
+        app:layout_constraintTop_toBottomOf="@+id/tvIncome" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputCityRide"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/inputAccount"
+        app:layout_constraintStart_toStartOf="@+id/inputAccount"
+        app:layout_constraintTop_toBottomOf="@+id/inputAccount">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="city ride" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputAccessFee"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/setAccountPer"
+        app:layout_constraintStart_toStartOf="@+id/setAccountPer"
+        app:layout_constraintTop_toTopOf="@+id/inputCityRide">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="access fee"
+            android:textColor="@color/colorAccent" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputInsurance"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/inputCityRide"
+        app:layout_constraintStart_toStartOf="@+id/inputCityRide"
+        app:layout_constraintTop_toTopOf="@+id/inputLease">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="insurance"
+            android:textColor="@color/colorAccent" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputLease"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/inputAccessFee"
+        app:layout_constraintStart_toStartOf="@+id/inputAccessFee"
+        app:layout_constraintTop_toBottomOf="@+id/inputAccessFee">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="lease"
+            android:textColor="@color/colorAccent" />
+    </android.support.design.widget.TextInputLayout>
+
+</android.support.constraint.ConstraintLayout>
+</ScrollView>

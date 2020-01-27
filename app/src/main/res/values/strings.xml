@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name"><center>Taxi Lease Payment</center></string>
+    <string name="hint">90%</string>
+    <string name="total_access_miles">total access miles</string>
+    <string name="credit_amount">credit amount</string>
+
+</resources>
